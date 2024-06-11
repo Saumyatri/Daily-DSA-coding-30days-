@@ -1,13 +1,13 @@
 public class PQ {
     public static void main(String args[]){
-        Student s= new Student();
+        Students s= new Students();
         s.name = "Aman";
         System.out.println(s.name);
 
     }
 }
 
-class Student{
+class Students{
     String name;
     int marks;
 }
