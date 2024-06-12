@@ -42,14 +42,27 @@ public class DecOrder {
     //FIBONACCI NUMBERS
     public static int fib(int n){
         if(n==0 || n==1){
-            return n;}
+            return n;
+        }
         int fibnm2=fib(n-2);
         int fibnm1=fib(n-1);
         int fbn=fibnm1+fibnm2;
         return fbn;
     }
+
+    // is array sorted or not 
+    public static boolean isSorted(int arr[], int i){
+        if(i==arr.length-1){
+            return true;
+        }
+        if(arr[i]>arr[i+1]){
+            return false;
+        }
+        return isSorted(arr, i+1);
+    }
     public static void main(String[] args) {
-        int n=5;
-        System.out.println(fib(n));
+        //int n=5;
+        int arr[]={1,2,4,3,5};
+        System.out.println(isSorted(arr,0));
     }
 }
