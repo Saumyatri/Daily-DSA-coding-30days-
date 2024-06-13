@@ -83,9 +83,17 @@ public class DecOrder {
         return isFound;
     }
 
+    //x to the power of n
+    public static int power(int x,int n){
+        if(n==0){
+            return 1;
+        }
+        return x*power(x,n-1);
+    }
+
     public static void main(String[] args) {
         //int n=5;
-        int arr[]={8,3,6,9,5,10,2,5,3};
-        System.out.println(lastOccurence(arr, 5, 0));
+        //int arr[]={8,3,6,9,5,10,2,5,3};
+        System.out.println(power(2,10));
     }
 }
