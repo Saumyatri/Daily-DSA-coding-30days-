@@ -90,10 +90,23 @@ public class DecOrder {
         }
         return x*power(x,n-1);
     }
+    //optimized x to the power of n with time coplexity as O(logn)
+    public static int opPower(int x, int n){
+        if(n==0){
+            return 1;
+        }
+        int halfpower = opPower(x, n/2);
+        int halfpowersq= halfpower*halfpower;
 
+        // n is odd
+        if(n%2!=0){
+            halfpowersq=x*halfpowersq;
+        }
+        return halfpowersq;
+    }
     public static void main(String[] args) {
         //int n=5;
         //int arr[]={8,3,6,9,5,10,2,5,3};
-        System.out.println(power(2,10));
+        System.out.println(opPower(2,5));
     }
 }
