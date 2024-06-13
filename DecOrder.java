@@ -60,9 +60,21 @@ public class DecOrder {
         }
         return isSorted(arr, i+1);
     }
+    // first occurence in array
+
+    public static int firstOccurence(int arr[],int key,int i){
+        if(i==arr.length){
+            return -1;
+        }
+        if(arr[i]==key){
+            return i;
+        }
+        return firstOccurence(arr, key, i+1);
+    }
+
     public static void main(String[] args) {
         //int n=5;
-        int arr[]={1,2,4,3,5};
-        System.out.println(isSorted(arr,0));
+        int arr[]={8,3,6,9,5,10,2,5,3};
+        System.out.println(firstOccurence(arr, 5, 0));
     }
 }
