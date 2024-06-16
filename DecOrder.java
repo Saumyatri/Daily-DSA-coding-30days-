@@ -104,9 +104,25 @@ public class DecOrder {
         }
         return halfpowersq;
     }
+    
+    // Tiling Problem
+    public static int TilingProb(int n){
+        //basecase
+        if(n==0 || n==1){
+            return 1;
+        }
+        //kaam
+        int fnm1=TilingProb(n-1);
+
+        int fnm2=TilingProb(n-2);
+        int totways=fnm1+fnm1;
+        //call innner function
+        return totways;
+
+    }
     public static void main(String[] args) {
-        //int n=5;
+        int n=2;
         //int arr[]={8,3,6,9,5,10,2,5,3};
-        System.out.println(opPower(2,5));
+        System.out.println(TilingProb(n));
     }
 }
