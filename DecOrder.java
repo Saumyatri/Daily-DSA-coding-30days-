@@ -145,15 +145,15 @@ public class DecOrder {
             }
             //signle
             //choice 
-            //int fnm1=friendsPairing(n-1);
+            int fnm1=friendsPairing(n-1);
 
             //pair
-           // int fnm2= friendsPairing(n-2);
-           // int pairways=(n-1)*fnm2;
+           int fnm2= friendsPairing(n-2);
+            int pairways=(n-1)*fnm2;
 
-            //int totways=(n-1)*fnm2;
-           // return totways;
-           return friendsPairing(n-1)+(n-1)*friendsPairing(n-2);
+            int totways=fnm1+pairways;
+            return totways;
+           //return friendsPairing(n-1)+(n-1)*friendsPairing(n-2);
         }
     public static void main(String[] args) {
        // int n=2;
