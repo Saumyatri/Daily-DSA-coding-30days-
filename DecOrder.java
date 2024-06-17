@@ -120,9 +120,29 @@ public class DecOrder {
         return totways;
 
     }
+    
+    //removing duplicate string charecters
+    public static void removeDuplicates(int idx, String str, StringBuilder newstr, boolean map[] ){
+        if(idx==str.length()){
+            System.out.println(newstr);
+            return;
+        }
+        char currChar = str.charAt(idx);
+        if(map[currChar-'a']==true){
+            //duplicates
+            removeDuplicates(idx+1, str, newstr, map);
+        }
+        else{
+            map[currChar-'a']=true;
+            removeDuplicates(idx+1, str, newstr.append(currChar), map);
+        }
+
+    }
     public static void main(String[] args) {
-        int n=2;
+       // int n=2;
         //int arr[]={8,3,6,9,5,10,2,5,3};
-        System.out.println(TilingProb(n));
+        //System.out.println(TilingProb(n));
+        String str= "appnnacollege";
+        removeDuplicates(0, str,new StringBuilder(""), new boolean[26]);
     }
 }
