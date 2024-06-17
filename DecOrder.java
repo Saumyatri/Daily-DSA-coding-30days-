@@ -136,13 +136,31 @@ public class DecOrder {
             map[currChar-'a']=true;
             removeDuplicates(idx+1, str, newstr.append(currChar), map);
         }
-
     }
+
+        //friends pairing problem
+        public static int friendsPairing(int n){
+            if(n==1||n==2){
+                return n;
+            }
+            //signle
+            //choice 
+            //int fnm1=friendsPairing(n-1);
+
+            //pair
+           // int fnm2= friendsPairing(n-2);
+           // int pairways=(n-1)*fnm2;
+
+            //int totways=(n-1)*fnm2;
+           // return totways;
+           return friendsPairing(n-1)+(n-1)*friendsPairing(n-2);
+        }
     public static void main(String[] args) {
        // int n=2;
         //int arr[]={8,3,6,9,5,10,2,5,3};
-        //System.out.println(TilingProb(n));
-        String str= "appnnacollege";
-        removeDuplicates(0, str,new StringBuilder(""), new boolean[26]);
+        System.out.println(friendsPairing(3));
+        //String str= "appnnacollege";
+        //removeDuplicates(0, str,new StringBuilder(""), new boolean[26]);
+    
     }
 }
