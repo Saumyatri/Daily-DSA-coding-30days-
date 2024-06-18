@@ -155,10 +155,24 @@ public class DecOrder {
             //return totways;
            return friendsPairing(n-1)+(n-1)*friendsPairing(n-2);
         }
+
+        //Binary string problem
+        public static void BinaryString(int n, int lastplace, String str){
+            //base case
+            if(n==0){
+                System.out.println(str);
+                return;
+            }
+            //kaam
+            BinaryString(n-1, 0, str+"0");
+            if(lastplace==0){
+                BinaryString(n-1, 1, str+"1");
+            }
+        }
     public static void main(String[] args) {
        // int n=2;
         //int arr[]={8,3,6,9,5,10,2,5,3};
-        System.out.println(friendsPairing(3));
+        BinaryString(3,0, "");
         //String str= "appnnacollege";
         //removeDuplicates(0, str,new StringBuilder(""), new boolean[26]);
     
