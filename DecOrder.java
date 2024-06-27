@@ -169,11 +169,25 @@ public class DecOrder {
                 BinaryString(n-1, 1, str+"1");
             }
         }
+
+        //the key occurence indices
+        public static void allOccurence(int arr[], int key, int i){
+            if(i==arr.length){
+                return;
+            }
+            if(arr[i]==key){
+                System.out.println(i+"");
+            }
+            allOccurence(arr, key, i+1);
+        }
     public static void main(String[] args) {
        // int n=2;
-        //int arr[]={8,3,6,9,5,10,2,5,3};
-        BinaryString(3,0, "");
+        int arr[]={8,3,2,9,5,10,2,2,2};
+        //BinaryString(3,0, "");
         //String str= "appnnacollege";
+        int key=2;
+        allOccurence(arr, key, 0);
+        System.out.println();
         //removeDuplicates(0, str,new StringBuilder(""), new boolean[26]);
     
     }
