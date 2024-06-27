@@ -180,14 +180,38 @@ public class DecOrder {
             }
             allOccurence(arr, key, i+1);
         }
+        static String digits[]={"zero","one","two","three","four","five","six","seven","eight","nine"};
+
+        //numbers to string
+        public static void printDigits(int num){
+            if(num==0){
+                return;
+            }
+            int lastDigit=num%10;
+            printDigits(num/10);
+            System.out.println(digits[lastDigit]+" ");
+
+        }
+        
+        //string length
+        public static int stringLength(String str){
+            if(str.length()==0){
+                return 0;
+            }
+            return stringLength(str.substring(1))+1;
+
+
+        }
     public static void main(String[] args) {
        // int n=2;
-        int arr[]={8,3,2,9,5,10,2,2,2};
+       // int arr[]={8,3,2,9,5,10,2,2,2};
         //BinaryString(3,0, "");
         //String str= "appnnacollege";
-        int key=2;
-        allOccurence(arr, key, 0);
-        System.out.println();
+        //int key=2;
+        //allOccurence(arr, key, 0);
+        //printDigits(1290);
+        String str="abcdefg";
+        System.out.println(stringLength(str));
         //removeDuplicates(0, str,new StringBuilder(""), new boolean[26]);
     
     }
